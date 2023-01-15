@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<br><br><h2><span class="badge badge-info">{% block title %} {{ post['title'] }} {% endblock %}</span></h2>
+	<span class="badge badge-success">({{ post['create_time'] }})</span>
+	<br><br><p>{{ post['content'] }}</p>
+	<div style="text-align:right;">
+	<span class="badge badge-warning">Written by: {{ post['author'] }}</span></div>
+	<br><br>
+	<a href="{{ url_for('edit', id=post['id']) }}">
+            <button type="button" class="btn btn-dark" style="background-color: #e7e7e7; color:black;">Edit</button>
+            </a>
+	<a href="{{ url_for('index')}}"><button type="button" class="btn btn-dark"> Go Back </button></a>
+	
+	
+{% endblock %}	
